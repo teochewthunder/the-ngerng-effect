@@ -1,0 +1,143 @@
+<html>
+        <head>
+        <title>The Ngerng Effect</title>
+
+        <script>
+            window.onscroll=scroll;
+           
+            var prefixes=[];
+            prefixes[0]="";
+            prefixes[1]="";
+            prefixes[2]="";
+            prefixes[3]="";
+            prefixes[4]="";
+            prefixes[5]="My friends,";
+            prefixes[6]="My fellow countrymen,";
+            prefixes[7]="My fellow Singaporeans,";
+            prefixes[8]="However,";
+            prefixes[9]="But still,";
+
+            var suffixes=[];
+            suffixes[0]="";
+            suffixes[1]="";
+            suffixes[2]="";
+            suffixes[3]="";
+            suffixes[4]="";
+            suffixes[5]=" Are you ready?";
+            suffixes[6]=" We need more.";
+            suffixes[7]=" You have to fight.";
+            suffixes[8]=" This is not true.";
+            suffixes[9]=" Will you?";
+
+            var phrases=[];
+            phrases[0]="You have to fight for yourself.";
+            phrases[1]="I am very tired.";
+            phrases[2]="Things will only change if you are willing to fight for yourselves.";
+            phrases[3]="Singaporeans are still not willing to be ready.";
+            phrases[4]="Singaporeans did not stand up, or fight back.";
+            phrases[5]="The PAP set us up.";
+            phrases[6]="Many Singaporeans have asked me to run for the next general election and become a member of parliament.";
+            phrases[7]="I fought because I believed that at some point, Singaporeans would join in, and stand up to fight back.";
+            phrases[8]="How many of you are ready for this?";
+            phrases[9]="I have lost my job and pretty much my life in Singapore.";
+            phrases[10]="The government has made a constitutional breach against our constitutional rights.";
+            phrases[11]="We cannot allow the bullying from the prime minister and government to persist.";
+            phrases[12]="We cannot allow the abuse of power to continue unchecked.";
+            phrases[13]="I did not say anything that is defamatory or against the law.";
+            phrases[14]="Surely things can get better.";
+            phrases[15]="I still hope that we are ready for change and change will happen.";
+            phrases[16]="Because they don't care, and they never cared. ";
+            phrases[17]="We've waited too long.";
+            phrases[18]="This is it.";
+            phrases[19]="Singaporeans are blinded by their fears.";
+            phrases[20]="It is up to Singaporeans now.";
+
+            var infographics=[];
+            infographics[0]="";
+            infographics[1]="";
+            infographics[2]="";
+            infographics[3]="";
+            infographics[4]="";
+            infographics[5]="";
+            infographics[6]="";
+            infographics[7]="";
+            infographics[8]="";
+            infographics[9]="";
+            infographics[10]="";
+            infographics[11]="";
+            infographics[12]="";
+            infographics[13]="";
+            infographics[14]="";
+            infographics[15]="";
+            infographics[16]="http://1.bp.blogspot.com/-ntA-8ucy6RE/VPQR-xKDsgI/AAAAAAAAAYo/qTURTSmghQ8/s1600/rn1.png";
+            infographics[17]="http://4.bp.blogspot.com/-zsU-FWvIz9s/VPQR--mFXII/AAAAAAAAAYw/ncNFUhaPvKA/s1600/rn2.png";
+            infographics[18]="http://4.bp.blogspot.com/-0-OuUF9El0A/VPQR_MLR1cI/AAAAAAAAAYs/QW2l82RG5Bs/s1600/rn3.png";
+            infographics[19]="http://2.bp.blogspot.com/-VzQI1qxtPxc/VPQR_tfgP4I/AAAAAAAAAY0/Ids9OIVvwsI/s1600/rn4.png";          
+
+            function scroll()
+            {
+                var excess=screen.height^window.pageYOffset;
+                var moretext;
+
+                if (excess>(0.5*screen.height)&&screen.height<window.pageYOffset)
+                {          
+                    moretext= document.createElement("p");               
+                    document.getElementById("container").appendChild(moretext);
+                    moretext.innerHTML=createpara();
+                }
+            }
+
+            function createpara()
+            {
+                var sentences;
+                sentences=Math.floor((Math.random() * 3) + 1);
+
+                var para="";
+
+                for (i=1;i<=sentences;i++)
+                {
+                    para=para+createsentence();
+                }
+
+                return para;
+            }
+
+            function createsentence()
+            {
+                var prefix,phrase,suffix,infographic="";
+                var sentence="";
+
+                prefix=prefixes[Math.floor(Math.random() * (prefixes.length-1))];
+                phrase=phrases[Math.floor(Math.random() * (phrases.length-1))];
+
+                if (prefix!=""){phrase=phrase.substr(0, 1).toLowerCase() + phrase.substr(1)};
+                
+                suffix=suffixes[Math.floor(Math.random() * (suffixes.length-1))];
+                infographic=infographics[Math.floor(Math.random() * (infographics.length-1))];
+
+                sentence=prefix+" "+phrase+suffix+" ";
+
+                if (infographic!=""){sentence=sentence + "<br/><br/><img src=\"" + infographic + "\"> <br/><br/>";}
+
+                return sentence;
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="container">
+
+        </div>
+
+        <script>
+            var starttext;
+
+            for (j=1;j<=50;j++)
+            {
+                    starttext= document.createElement("p");               
+                    document.getElementById("container").appendChild(starttext);
+                    starttext.innerHTML=createpara();
+            }
+        </script>
+    </body>
+</html>
